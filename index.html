@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>module 30</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <form onsubmit="">
+        <div class="name-container">
+            <label id="name_label" for="name">Name:</label>
+            <input type="text" name="name" id="name">
+            <span id="name_error">please enter a valid name</span>
+        </div>
+        <div class="age-container">
+            <label for="age" id="age_label">age:</label>
+            <input type="text" name="age" id="age">
+            <span id="age_error">please enter a valid age</span>
+        </div>
+        <div class="city-container">
+            <label for="city" id="city_label">city:</label>
+            <select name="city" id="city">
+                <option value="" selected></option>
+                <option value="Prishtine">Prishtine</option>
+                <option value="Gjilan">Gjilan</option>
+                <option value="Prizren">Prizren</option>
+                <option value="Mitrovice">Mitrovice</option>
+            </select>
+
+            <span id="city_error">please enter a valid city</span>
+        </div>
+        <button type="submit" name="submit">send</button>
+    </form>
     <script src="main.js"></script>
 </body>
 </html>

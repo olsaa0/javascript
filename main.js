@@ -1,12 +1,25 @@
-age = 15;
-qytet = "Prishtina";
+function validate(){
+    var name = document.getElementById("name").value;
+    var name_regex = "/^[A-Za-z]+$/";
 
-if(age>=18 && qytet == "Prishtina"){
-    console.log("You can vote.")
-}
-else{
-    console.log("You cannot vote.")
-}
+    var age = document.getElementById("age").value;
+    var age_regex = "^[0-9]+$";
 
-var cars=['audi', 'mercides', 'bmw', 'lambo', 'idk', 'rolls royce'];
-if(cars[5]=='bmw')
+    var city = document.getElementById("city").value;
+
+    if(!(name.match(name_regex)) || !(age.match(age_regex)) || (city=="")){
+        if(!(name.match(name_regex))){
+            document.getElementById("name_error").style.visibility = "visible";
+        }
+        if(!(age.match(age_regex))){
+            document.getElementById("age_error").style.visibility = "visible";
+        }
+        if(city=""){
+            document.getElementById("city_error").style.visibility = "visible";
+        }
+        return false;
+    }
+    else{
+        return true;
+    }
+}
