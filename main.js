@@ -1,25 +1,27 @@
-function validate(){
-    var name = document.getElementById("name").value;
-    var name_regex = "/^[A-Za-z]+$/";
-
-    var age = document.getElementById("age").value;
-    var age_regex = "^[0-9]+$";
-
-    var city = document.getElementById("city").value;
-
-    if(!(name.match(name_regex)) || !(age.match(age_regex)) || (city=="")){
-        if(!(name.match(name_regex))){
-            document.getElementById("name_error").style.visibility = "visible";
-        }
-        if(!(age.match(age_regex))){
-            document.getElementById("age_error").style.visibility = "visible";
-        }
-        if(city=""){
-            document.getElementById("city_error").style.visibility = "visible";
-        }
-        return false;
-    }
-    else{
-        return true;
-    }
+function printNames(){
+    console.log("Andi");
+    //callback//
+    setTimeout(function() {console.log("Aniku")}, 3000);
+    console.log("Olsa");
 }
+
+printNames();
+
+var colors = ["blue", "red", "green", "purple"];
+
+function changeBgColor(){
+    document.querySelector('body').style.background = colors[Math.floor(Math.random()*colors.length)];
+
+}
+
+var names = ["Dorant", "Olsa", "Daris", "Anik", "Shpat", "Blin"];
+
+function changeName(){
+    document.querySelector('p').innerHTML = names[Math.round(Math.random() * (names.length-1))]
+    console.log([Math.round(Math.random * (names.length-1))]);
+}
+
+changeBgColor();
+setInterval(changeBgColor, 1000);
+setInterval(changeName, 1000);
+changeName(changeName(), 1000);
